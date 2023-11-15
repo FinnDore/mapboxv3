@@ -102,7 +102,7 @@ export default function HomePage() {
         <div className="0 flex justify-center">
           <button
             className={clsx(
-              "group absolute w-64 rounded-full border border-black/20 bg-white px-4 py-2  font-bold shadow-md transition-all hover:w-72 hover:scale-105",
+              "group absolute w-40 rounded-full border border-black/20 bg-white px-4 py-2 text-sm  font-bold shadow-md transition-all hover:w-48 hover:scale-105 md:w-64 md:hover:w-72",
               {
                 "!border-white/70 !bg-black text-white/80": dark,
               },
