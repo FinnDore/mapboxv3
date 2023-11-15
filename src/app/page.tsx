@@ -65,7 +65,9 @@ export default function HomePage() {
     });
     theMapRef.current = map;
     console.log("aaa");
-    return () => {};
+    return () => {
+      // a
+    };
   }, [currentPoi]);
 
   return (
