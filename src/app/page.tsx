@@ -49,7 +49,7 @@ export default function HomePage() {
     mapboxgl.accessToken = env.NEXT_PUBLIC_MAPBOX;
     console.log(currentPoi.center);
 
-    pioRef.current = +window.localStorage.getItem("pio")! ?? 0;
+    pioRef.current = 0;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-explicit-any
     const map: any = new mapboxgl.Map({
