@@ -17,6 +17,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_MAPBOX: z.string(),
+    NEXT_PUBLIC_PROD: z.boolean(),
   },
 
   /**
@@ -26,6 +27,7 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_MAPBOX: process.env.NEXT_PUBLIC_MAPBOX,
+    NEXT_PUBLIC_PROD: process.env.NODE_ENV === "production",
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

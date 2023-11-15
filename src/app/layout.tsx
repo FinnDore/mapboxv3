@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { env } from "~/env.mjs";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        {env.NEXT_PUBLIC_PROD && (
+          <script
+            async
+            defer
+            data-website-id="afd4eaa8-bc88-43f3-9113-4bf407740756"
+            src="https://umami.finndore.dev/script.js"
+          ></script>
+        )}
+      </head>
+
       <body className={`font-sans ${inter.variable}`}>{children}</body>
     </html>
   );
