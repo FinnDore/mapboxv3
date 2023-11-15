@@ -27,6 +27,12 @@ const pois = [
     pitch: 70,
     bearing: -110,
   },
+  {
+    name: "Manchester",
+    center: [-2.248305, 53.473373],
+    pitch: 70,
+    bearing: -110,
+  },
 ];
 
 export default function HomePage() {
@@ -54,17 +60,16 @@ export default function HomePage() {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-explicit-any
     const map: any = new mapboxgl.Map({
       container: mapRef.current, // container ID
-      center: [0, 0],
+      center: pois[pioRef.current]?.center as [number, number], // starting position [lng, lat]
       zoom: pois[pioRef.current]?.zoom, // starting zoom
-      pitch: 0, // pitch in degrees
-      bearing: currentPoi.bearing, // bearing in degrees
+      pitch: pois[pioRef.current]?.pitch, // pitch in degrees
+      bearing: pois[pioRef.current]?.bearing, // bearing in degrees
     });
     map.on("style.load", () => {
       map.setConfigProperty("basemap", "lightPreset", "dusk");
       map.setConfigProperty("basemap", "showPointOfInterestLabels", true);
     });
     theMapRef.current = map;
-    console.log("aaa");
     return () => {
       // a
     };
